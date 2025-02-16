@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';  // Import the CSS file
+import { Link } from 'react-router-dom';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -63,8 +64,11 @@ function Login() {
             required
           />
         </div>
-        <button type="submit">Submit</button>
-      </form>
+        <button type="submit" className="submit">Submit</button>
+        </form>
+        <p className="signup-text">
+        Don't have an account? <Link to="/signup">Sign Up</Link>
+      </p>
     </div>
   );
 }

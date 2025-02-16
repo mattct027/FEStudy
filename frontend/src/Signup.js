@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';  // Import the CSS file
+import { Link } from 'react-router-dom';
 
 function Signup() {
   const [username, setUsername] = useState('');
@@ -40,6 +41,9 @@ function Signup() {
 
   return (
     <div className="signup-container">
+        <div className="circle-container">
+        <img src="zanegrass.png" alt="Profile Picture" className="circle-img" />
+        </div>
       <h2>Signup</h2>
       <form onSubmit={handleSignupSubmit}>
         <div>
@@ -60,7 +64,10 @@ function Signup() {
             required
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="submit">Submit</button>
+        <p className="signup-text">
+        Have a account already? <Link to="/login">Login</Link>
+      </p>
       </form>
     </div>
   );

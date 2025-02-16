@@ -23,21 +23,27 @@ body, html {
   flex-direction: column;
 }
 
+/* Landing page title */
 .landing-page h1 {
   color: white;
   font-size: 4rem;
   font-family: Arial, sans-serif;
+  margin-bottom: 10px;
+  max-width: 90%;  /* Limits the width of the title */
+  text-overflow: ellipsis;  /* Adds '...' if the text overflows */
+  overflow: hidden;  /* Ensures the title text doesn't overflow */
+  white-space: nowrap;  /* Prevents wrapping */
 }
 
 /* Circle container styles */
 .circle-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;  /* Adds spacing between the image and the buttons */
 }
 
-/* Image inside the circle */
+/* Image inside the circle with fade-in effect */
 .circle-img {
   width: 100px;
   height: 100px;
@@ -45,23 +51,44 @@ body, html {
   object-fit: cover; /* Ensures the image fits inside the circle */
   object-position: center;
   border: 2px solid white; /* Optional: adds a border around the circle */
+
+  /* Fade-in effect */
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeIn 1.5s ease-in-out forwards;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Auth buttons container */
 .auth-buttons {
-  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;  /* Adds space between buttons */
+  margin-top: 10px;
 }
 
+/* Auth buttons */
 .auth-buttons button {
-  background-color: #4CAF50;
+  background-color: #0931f8;
   color: white;
   font-size: 16px;
   padding: 10px 20px;
-  margin: 5px;
+  width: 150px;  /* Ensure buttons are the same size */
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .auth-buttons button:hover {
-  background-color: #45a049;
+  background-color: #001686;
 }

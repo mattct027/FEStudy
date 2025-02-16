@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS feprep_db;
+
+USE feprep_db;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE USER 'feprep'@'%' IDENTIFIED BY 'feprep';
+
+GRANT ALL PRIVILEGES ON feprep_db.* TO 'feprep'@'%';
+
+FLUSH PRIVILEGES;
